@@ -17,10 +17,10 @@ int main()
     int M, N;
     scanf("%d %d", &M, &N);
     int cnt2 = 0, cnt3 = 0;
-    for(int i = 2; cnt2 <=N; i++){
+    for(int i = 2; cnt2 <= N; i++){
         if( pre(i) ){
             ++cnt2;
-            if(cnt2 >=M && cnt2 <=N){
+            if(cnt2 >= M && cnt2 <= N){
                 ++cnt3;
                 printf("%d", i);
                 if(cnt3 % 10 == 0){
