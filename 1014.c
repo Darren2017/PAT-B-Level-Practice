@@ -5,7 +5,7 @@
 int main()
 {
     char str[4][61];
-    char date[][5] = {"MON ", "TUE ", "WEN ", "THU ", "FRI ", "SAT ", "SUN "};
+    char date[][5] = {"MON ", "TUE ", "WED ", "THU ", "FRI ", "SAT ", "SUN "};
     scanf("%s %s %s %s", str[0], str[1], str[2], str[3]);
     int cnt = 0;
     for(int i = 0; str[0][i] && str[0][i]; i++){
@@ -32,7 +32,7 @@ int main()
             }
         }
     }
-    for(int i = 0; i <= strlen(str[2]); i++){
+    for(int i = 0; str[2][i] && str[3][i]; i++){
         if(str[2][i] == str[3][i] && isalpha(str[2][i])){
             printf("%02d", i);
             break;
