@@ -16,11 +16,8 @@ int main()
         R = R % B;
     }
     i = 0;
-    while(Q[i] == '0'){
+    while(Q[i] == '0' && Q[i + 1] != '\0'){
         i++;
-    }
-    if(Q[i] == '\0'){
-        printf("%d", 0);
     }
     for(; i < len; i++){
         printf("%c", Q[i]);
