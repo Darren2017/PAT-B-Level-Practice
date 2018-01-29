@@ -1,6 +1,5 @@
 cnt = 0
-n = raw_input()
-n = int(n)
+n = input()
 while n != 1:
     if n % 2 == 0:
         n /= 2
