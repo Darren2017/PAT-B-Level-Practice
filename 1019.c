@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-void transate1(int result[], int input){     /*将数字转换为数组进行处理*/
+void transate1(int result[], int input){     //将数字转换为数组进行处理
     result[0] = input / 1000;       
     input %= 1000;
     result[1] = input / 100;
@@ -10,9 +10,19 @@ void transate1(int result[], int input){     /*将数字转换为数组进行处
     result[3] = input;
 }
 
-int transate2(int)
+int transate21(int result[], int input){    //降序排列的数字
+    input = result[0] * 1000 + result[1] * 100 + result[2] * 10 + result[3];
 
-void swap4(int result[]){                   /*将数组按照降序排列*/
+    return input;
+}
+
+int transate22(int result[], int input){    //升序排列的数字
+    input = result[0] + result[1] * 10 + result[2] * 100 + result[3] * 1000;
+
+    return input;
+}
+
+void swap4(int result[]){                   //将数组按照降序排列
     for (int i = 0; i < 4; i++){
         for (int j = i; j < 4; j++){
             if (result[i] < result[j]){
@@ -41,11 +51,13 @@ int main()
         }
         printf(" = 0000");
     }else{
-        while(input != 6174){
-            transate1(result, input);       /*还未写完， 思路：将读入的数字转换为数组，将数组按照升序或者降序排列，然后转换为数字，计算的出结果，重复此过程，直至得到6174*/
-        }
+        do{                                             //使用do-while语句，而不是直接使用while语句，否则输入为6174时输出为空
+            transate1(result, input);
+            swap4(result);
+            printf("%04d - %04d = %04d\n", transate21(result, input), transate22(result, input), transate21(result, input) - transate22(result, input));
+            input = transate21(result, input) - transate22(result, input);
+        }while(input != 6174);
     }
     
-
     return 0;
 }
