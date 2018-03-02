@@ -1,9 +1,23 @@
 #include<stdio.h>
-/*思路介绍：AB的位数太大，无法直接进行加法和除法运算，故通过字符串作为中间变量进行转换
-1.字符串按位模拟加法运算
-2.利用进制转换的方式，通过大数除法求解
-三月二号一定完成，先睡觉～～*/
+
 int main()
 {
-    
+    int a, b, d;
+    int sum;
+    scanf("%d %d %d", &a, &b, &d);
+    sum = a + b;
+    int result[100000];
+    int i = 0;
+    while(sum){
+        result[i++] = sum % d;
+        sum /= d;
+    }
+    for(int n = i - 1; n >=0; n--){
+        printf("%d", result[n]);
+    }
+    if (i == 0){
+        printf("0");
+    }
+
+    return 0;
 }
