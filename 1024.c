@@ -3,7 +3,7 @@
 
 int main()
 {
-    char num[1000];
+    char num[1000];         //思路：用PN表示正负，用cnt1和cnt2分别记录小数点后的位数和指数，用zero表示小数中最后0的个数
     scanf("%s", num);
     double result = 0;
     int PN = 1;
