@@ -38,7 +38,6 @@ int main()
     }
 
     printf("%d", r);
-
     return 0;
 
 }
