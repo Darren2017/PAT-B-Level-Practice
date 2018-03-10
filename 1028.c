@@ -107,9 +107,11 @@ int main()
             }
         }
     }
-
-    printf("%d %s %s", cnt, name[max], name[min]);
-
+    if (cnt){
+        printf("%d %s %s", cnt, name[max], name[min]);
+    }else{
+        printf("0");
+    }
 
     return 0;
 }
