@@ -1,7 +1,31 @@
 #include<stdio.h>
 
-int main()
-{
+int max(int score[], int sch[], int n){
+    int s = 0;
+    for(int j = 0; j < n; j++){
+        if(score[j] > score[s]){
+            s = j;
+        }
+    }
+    return s;
+}
 
-}       /*先描述下思路：两个数组，一个用来储存学校编号（全部初始化为零，历遍时以是否为零作为结束条件），另一个储存成绩。
-            每读取一个成绩时，进行历遍，若学校编号存在则成绩累加，若不存在则创建新的*/
+int main()
+{   
+    int sch[100000] = {0};
+    int score[100000] = {0};
+    int num, gola, schnum;
+    scanf("%d" , &num);
+    for(int i = 0; i < num; i++){
+        scanf("%d %d", &schnum, &gola);
+        sch[schnum - 1] = schnum;
+        score[schnum - 1] += gola;
+    }
+    
+    int s = max(score, sch, num);
+
+    printf("%d %d", s + 1, score[s]);
+
+    return 0;
+
+}
