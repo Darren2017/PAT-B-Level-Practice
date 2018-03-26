@@ -2,7 +2,7 @@
 
 int main()
 {
-    int N, K, gola;
+    int N, K, gola, m;
     int score[101] = {0};
     scanf("%d", &N);
     for(int i = 0; i < N; i++){
@@ -10,7 +10,6 @@ int main()
         score[gola]++;
     }
     scanf("%d", &K);
-    int m;
     for(int i = 0; i < K; i ++){
         scanf("%d", &m);
         printf("%d", score[m]);
