@@ -12,6 +12,6 @@ int main()
         result = result + num[i] * 1.0 * m * i;
         m--;
     }
-    printf("%.2lf", result);
+    printf("%.2f", result);
     return 0;
 }
