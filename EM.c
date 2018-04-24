@@ -9,17 +9,17 @@ int main()
     scanf("%lf", &P2);
 
     int h[5], t[5];       //分别用来记录五次投掷中正反面的次数
-    for(int i = 0; i < 5; i++){
+    for(int i = 0; i < 5; i++){                 //读取数据   其中h用来记录“五枚”硬币的正面次数，t用来记录“五枚”硬币的反面次数
         printf("请输入第%d次投掷硬币得到为正面的次数：h1:",i + 1);
         scanf("%d",&h[i]);
         printf("...得到反面的次数:t1:");
         scanf("%d",&t[i]);
     }
 
-    for(int m = 0; m < 8; m++){
+    for(int m = 0; m < 8; m++){                     //第一个for循环控制八次训练
         printf("本次使用的P1,P2  %f %f\n", P1,P2);
         double p1[5] = {1, 1, 1, 1, 1}, p2[5] = {1, 1, 1, 1, 1};
-        for(int i = 0; i < 5; i++){
+        for(int i = 0; i < 5; i++){             //该for循环用来判断所抛的硬币是A还是B
             for(int j = 0; j < h[i]; j++){
                 p1[i] *= P1;
                 p2[i] *= P2;
@@ -31,7 +31,7 @@ int main()
         printf("%f, %f\n", p1[i], p2[i]);            
         }
         int sum1 = 0, sum2 = 0, cnt1 = 0, cnt2 = 0;
-        for(int i = 0; i < 5; i++){
+        for(int i = 0; i < 5; i++){         //该for循环用来求新的概率
             if(p1[i] > p2[i]){
                 sum1 += h[i];
                 cnt1++;
