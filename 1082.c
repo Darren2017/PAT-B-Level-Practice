@@ -6,7 +6,7 @@ int main()
     scanf("%d", &N);
     for(int i = 0; i < N; i++){
         scanf("%d %d %d", &ID, &x, &y);
-        distance = x * x + y * y;
+        distance = x * x + y * y;   //求距离
         if(maxDis < distance){
             maxDis = distance;
             maxID = ID;
