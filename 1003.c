@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include<stdio.h>//18分
 
 int pre(char s[]);
 
